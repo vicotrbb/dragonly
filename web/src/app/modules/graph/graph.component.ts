@@ -24,5 +24,11 @@ export class GraphComponent implements OnInit {
   ngOnInit(): void {
     this.centerGraph();
     this.fitGraph();
+
+    
+  }
+
+  onNodeClick(event: any): void {
+    console.log(event)
   }
 }

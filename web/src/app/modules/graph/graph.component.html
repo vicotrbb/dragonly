@@ -3,6 +3,8 @@
   [zoomToFit$]="zoomToFit$"
   [view]="[1600, 1600]"
   layout="d3ForceDirected"
+  showMiniMap=true
+  autoCenter=true
   [links]="[
     {
       id: 'a',
@@ -61,4 +63,27 @@
       label: 'Node F'
     }
   ]"
-></ngx-graph>
+>
+
+<ng-template #nodeTemplate let-node>
+  <svg:g
+    (click)="onNodeClick($event)"
+    (dblclick)="onNodeClick($event)"
+    class="node"
+    ngx-tooltip
+    [tooltipPlacement]="'top'"
+    [tooltipType]="'tooltip'"
+    [tooltipTitle]="node.label"
+  >
+    <svg:rect
+      [attr.width]="node.dimension.width"
+      [attr.height]="node.dimension.height"
+      [attr.fill]="node.data.color"
+    />
+    <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2">
+      {{node.label}}
+    </svg:text>
+  </svg:g>
+</ng-template>
+
+</ngx-graph>
