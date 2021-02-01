@@ -1,6 +1,4 @@
 <ngx-graph
-  [center$]="center$"
-  [zoomToFit$]="zoomToFit$"
   [view]="[1600, 1600]"
   layout="d3ForceDirected"
   showMiniMap=true
@@ -40,27 +38,39 @@
   [nodes]="[
     {
       id: '1',
-      label: 'Node A'
+      label: 'Node A',
+      summary: 'dasdadas',
+      text: '# text'
     },
     {
       id: '2',
-      label: 'Node B'
+      label: 'Node B',
+      summary: 'dasdadas',
+      text: '# text'
     },
     {
       id: '3',
-      label: 'Node C'
+      label: 'Node C',
+      summary: 'dasdadas',
+      text: '# text'
     },
     {
       id: '4',
-      label: 'Node D'
+      label: 'Node D',
+      summary: 'dasdadas',
+      text: '# text'
     },
     {
       id: '5',
-      label: 'Node E'
+      label: 'Node E',
+      summary: 'dasdadas',
+      text: '# text'
     },
     {
       id: '6',
-      label: 'Node F'
+      label: 'Node F',
+      summary: 'dasdadas',
+      text: '# text'
     }
   ]"
 >
@@ -73,7 +83,7 @@
     ngx-tooltip
     [tooltipPlacement]="'top'"
     [tooltipType]="'tooltip'"
-    [tooltipTitle]="node.label"
+    [tooltipTitle]="node.summary"
   >
     <svg:rect
       [attr.width]="node.dimension.width"

@@ -10,7 +10,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoteComponent } from './modules/note/note.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     NavBarComponent,
     FooterComponent,
     GraphComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     TooltipModule,
     ModalModule,
     NgxGraphModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
