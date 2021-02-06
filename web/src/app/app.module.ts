@@ -11,8 +11,10 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoteComponent } from './modules/note/note.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NoteComponent } from './modules/note/note.component';
+import { EventEmitterService } from './core/services/event-emitter/event-emitter.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NavBarComponent,
     FooterComponent,
     GraphComponent,
-    NoteComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +32,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NgxGraphModule,
     BrowserAnimationsModule,
     NgxChartsModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    EventEmitterService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
