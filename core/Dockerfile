@@ -1,8 +1,10 @@
 FROM python:3.9.0-slim
-COPY . /work
-WORKDIR /work
-
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 EXPOSE 5000
-RUN pip install --no-cache-dir -r requirements.txt
-
-CMD gunicorn --workers 1 --log-level info --timeout 90 --bind 0.0.0.0:5000 app:app
+COPY . .
+CMD ["flask", "run"]
