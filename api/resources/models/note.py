@@ -9,3 +9,22 @@ note = Model('Note', {
     'date_changed': fields.DateTime(required=False, description='Note change date'),
     'date_removed': fields.DateTime(required=False, description='Note removal date'),
 })
+
+
+def get_model():
+    return note
+
+def get_all_notes():
+    pass
+
+def get_note(id):
+    pass
+
+def create_note():
+    pass
+
+def update_note(id):
+    pass
+
+def delete_note(id):
+    pass

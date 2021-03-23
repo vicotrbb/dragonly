@@ -8,4 +8,4 @@ api = Api(
     description='A description'
 )
 
-api.add_namespace(note, path='/api/notes')
+api.add_namespace(note.api, path='/api/notes')
