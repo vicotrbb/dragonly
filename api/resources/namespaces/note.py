@@ -21,7 +21,7 @@ class Note(Resource):
     @api.expect(model)
     def post(self):
         '''Create a new note'''
-        pass
+        print(self)
 
 
 @api.route('/<id>')
